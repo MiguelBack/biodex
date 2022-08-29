@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -22,12 +23,12 @@ body {
 }
 
 .card-login {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 50px;
+    padding: 2% 5%;
     background: #414166;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
@@ -68,10 +69,6 @@ body {
     margin-bottom: 10px;
 }
 
-.textfield>input::placeholder {
-    color: #898c97;
-}
-
 .textfield-city {
     display: inline-flex;
 }
@@ -105,27 +102,38 @@ body {
     box-sizing: border-box;
 }
 
-.textfield-city>input::placeholder {
-    color: #898c97;
+.textfield>input::placeholder {
+    color: #898b96;
 }
 
-button.botao {
-    width: 100%;
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 25px 0;
-    padding: 16px 0;
+.input1>input::placeholder {
+    color: #898b96;
+}
+
+.input2>input::placeholder {
+    color: #898b96;
+}
+
+.botoes {
+    text-align: center;
+ 
+}
+
+.botoes>button {
+    width: 40%;
+    text-align: center;
+    margin: 20px 5px 20px;
+    padding: 5%;
     border: none;
     border-radius: 100px;
     outline: none;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 3px;
     color: #414166;
     background: #3CF557;
     cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 8pt;
 }
 
 .entrar {
