@@ -24,8 +24,11 @@
     flex-direction: column;
 }
 
-.left-login>h1 {
-    color: #26FF47;
+.left-login>img {
+    max-width: 220px;
+    max-height: 220px;
+    width: auto;
+    height: auto;
 }
 
 .right-login {
