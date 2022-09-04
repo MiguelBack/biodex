@@ -1,29 +1,36 @@
 <?php
-session_start();
-include("conexao.php");
+include('conexao.php');
 
+if (isset($_POST['email']) || isset($_POST['senha'])) {
 
-$email = "";
-$senha = "";
+    if (strlen($_POST['email']) == 0) {
+        echo "Preencha seu e-mail";
+    } else if (strlen($_POST['senha']) == 0) {
+        echo "Preencha sua senha";
+    } else {
 
-if (isset($_POST["email"])) {
-    $email = addslashes(trim($_POST["email"]));
-}
-if (isset($_POST["senha"])) {
-    $senha = md5(trim($_POST["senha"]));
-}
+        $email = $mysqli->real_escape_string($_POST['email']);
+        $senha = $mysqli->real_escape_string($_POST['senha']);
 
-$sql = "SELECT * FROM usuarios WHERE email='$email' AND senha='$senha'";
-$result = $con->query($sql);
-$total_de_usuarios = $result->num_rows;
+        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
-if ($total_de_usuarios == 0) {
-    $dados = $result->fetch_assoc();
-    $_SESSION["email"] = $dados["email"];
-    $_SESSION["senha"] = $dados["senha"];
-    header("Location: index.php");
-    exit;
-} else {
-    echo "<p>Usuário não encontrado</p>";
-    echo "<a href=\"index.php\">Voltar</a>";
+        $quantidade = $sql_query->num_rows;
+
+        if ($quantidade == 1) {
+
+            $usuario = $sql_query->fetch_assoc();
+
+            if (!isset($_SESSION)) {
+                session_start();
+            }
+
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header("Location: /biodex/private/index.php");
+        } else {
+            echo "Falha ao logar! E-mail ou senha incorretos";
+        }
+    }
 }

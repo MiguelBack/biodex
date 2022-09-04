@@ -1,5 +1,5 @@
 <?php
-include("restrito.php")
+include('../login/protect.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include("restrito.php")
 
     <h1> DEU CERTO! VOCÊ ESTÁ LOGADO!</h1>
 
-    <p><a href="/back/sair.php"> Sair </a></p>
+    <p><a href="/biodex/login/logout.php"> Sair </a></p>
 
 
 </body>
