@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sucesso!</title>
 </head>
 
 <body>
@@ -28,17 +28,13 @@
     if ($con->affected_rows > 0) {
         echo "<p>";
         echo $con->affected_rows;
-        echo " Usuário(s) incluídas com sucesso!";
-        echo "</p>";
+        header("Location: entrar.html");
     } else {
         echo "<p>Ocorreu um erro: ";
         echo $con->error;
         echo "</p>";
     }
     ?>
-
-
-
 
 </body>
 

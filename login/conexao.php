@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$pssword = "";
+$senha = "";
 $bd = "biodex";
 
-$con = new mysqli($host, $user, $pssword, $bd);
+$con = new mysqli($host, $user, $senha, $bd);

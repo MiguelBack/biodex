@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
-const password = document.getElementById("password");
+const senha = document.getElementById("senha");
 const passwordConfirmation = document.getElementById("password-confirmation");
 const cep = document.getElementById("cep");
 const cidade = document.getElementById("cidade");
@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
 function checkInputs() {
     const usernameValue = username.value;
     const emailValue = email.value;
-    const passwordValue = password.value;
+    const passwordValue = senha.value;
     const passwordConfirmationValue = passwordConfirmation.value;
     const cepValue = cep.value;
     const cidadeValue = cidade.value;
@@ -35,11 +35,11 @@ function checkInputs() {
     }
 
     if (passwordValue === "") {
-        setErrorFor(password, "A senha é obrigatória.");
-    } else if (passwordValue.length < 7) {
-        setErrorFor(password, "A senha precisa ter no mínimo 7 caracteres.");
+        setErrorFor(senha, "A senha é obrigatória.");
+    } else if (senha.length < 7) {
+        setErrorFor(senha, "A senha precisa ter no mínimo 7 caracteres.");
     } else {
-        setSuccessFor(password);
+        setSuccessFor(senha);
     }
 
     if (passwordConfirmationValue === "") {

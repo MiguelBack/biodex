@@ -1,16 +1,14 @@
 const form = document.getElementById("form");
 const email = document.getElementById("email");
-const password = document.getElementById("password");
+const senha = document.getElementById("senha");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
     checkInputs();
 });
 
 function checkInputs() {
     const emailValue = email.value;
-    const passwordValue = password.value;
+    const senhaValue = senha.value;
 
     if (emailValue === "") {
         setErrorFor(email, "O email é obrigatório.");
@@ -20,10 +18,10 @@ function checkInputs() {
         setSuccessFor(email);
     }
 
-    if (passwordValue === "") {
-        setErrorFor(password, "A senha é obrigatória.");
+    if (senhaValue === "") {
+        setErrorFor(senha, "A senha é obrigatória.");
     } else {
-        setSuccessFor(password);
+        setSuccessFor(senha);
     }
 
     const formControls = form.querySelectorAll(".form-control");
@@ -34,6 +32,7 @@ function checkInputs() {
 
     if (formIsValid) {
         console.log("O formulário está 100% válido!");
+        e.preventDefault();
     }
 }
 
