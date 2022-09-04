@@ -1,174 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sen:wght@400;700;800&display=swap');
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-}
-
-.main-login {
-    background: #1F1A26;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-login {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.left-login>h1 {
-    color: #26FF47;
-}
-
-.right-login {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.container {
-    justify-content: left;
-    background-color: #292333;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    width: 60%;
-    max-width: 70%;
-    overflow: hidden;
-}
-
-.header {
-    background-color: #332C40;
-    padding: 20px;
-}
-
-.header h2 {
-    color: #D9D9D9;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
-
-.form {
-    padding: 20px;
-}
-
-.form-control {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.form-control label {
-    display: incline-block;
-    margin-bottom: 5px;
-    color: #D9D9D9;
-}
-
-.form-control input {
-    border: none;
-    background-color: #1F1A26;
-    display: block;
-    border-radius: 10px;
-    font-size: 14px;
-    width: 100%;
-    padding: 10px;
-    color: #D9D9D9;
-}
-
-.form-control input::placeholder {
-    color: #4E4A54;
-}
-
-.form-control i {
-    position: absolute;
-    top: 38px;
-    right: 10px;
-    visibility: hidden;
-}
-
-.form-control small {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-}
-
-.form button {
-    background-color: #26FF47;
-    border: none;
-    text-transform: uppercase;
-    color: #292333;
-    font-size: 14px;
-    width: 50%;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: 3px;
-}
-
-
-/* Error and Success */
-
-.form-control.success input {
-    border-color: #26FF47;
-}
-
-.form-control.error input {
-    border-color: #F50551;
-}
-
-.form-control.success i.fa-check-circle {
-    color: #26FF47;
-    visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-    color: #F50551;
-    visibility: visible;
-}
-
-.form-control.error small {
-    visibility: visible;
-    color: #F50551;
-}
-
-.form-control>h6 {
-    color: #D9D9D9;
-    font-weight: 400;
-}
-
-.form-control>h6>a {
-    text-decoration: none;
-    outline: none;
-    font-weight: 500;
-    color: #26FF47;
-}
-
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    -webkit-text-fill-color: #D9D9D9;
-    -webkit-box-shadow: 0 0 0px 1000px #1F1A26 inset;
-}
-
-.instagram {
-    margin-top: -20px;
-    margin-bottom: 15px;
-}
-
-.instagram>a>i {
-    color: #D9D9D9;
-}
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            margin: 50px 0;
+            width: 100%;
+            min-height: 100vh;
+            background: #1F1A26;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: #292333;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        .header {
+            background-color: #332C40;
+            padding: 20px;
+        }
+        
+        .header>h2 {
+            color: #D9D9D9;
+        }
+        
+        .form {
+            padding: 20px;
+        }
+        
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-control label {
+            display: inline-block;
+            margin-bottom: 5px;
+            color: #D9D9D9;
+        }
+        
+        .form-control input {
+            border: none;
+            background-color: #1F1A26;
+            display: block;
+            border-radius: 10px;
+            font-size: 14px;
+            width: 100%;
+            padding: 10px;
+            color: #D9D9D9;
+        }
+        
+        .form-control i {
+            position: absolute;
+            top: 45px;
+            right: 10px;
+            visibility: hidden;
+        }
+        
+        .form-control small {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+        
+        .form button {
+            background-color: #26FF47;
+            border: none;
+            text-transform: uppercase;
+            color: #292333;
+            font-size: 14px;
+            width: 50%;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 3px;
+        }
+        
+        .form-control input::placeholder {
+            color: #4E4A54;
+        }
+        /* Error and Success */
+        
+        .form-control.success input {
+            border-color: #26FF47;
+        }
+        
+        .form-control.error input {
+            border-color: #F50551;
+        }
+        
+        .form-control.success i.fa-check-circle {
+            color: #26FF47;
+            visibility: visible;
+        }
+        
+        .form-control.error i.fa-exclamation-circle {
+            color: #F50551;
+            visibility: visible;
+        }
+        
+        .form-control.error small {
+            visibility: visible;
+            color: #F50551;
+        }
+        
+        .form-control>h6 {
+            color: #D9D9D9;
+            font-weight: 400;
+        }
+        
+        .form-control>h6>a {
+            text-decoration: none;
+            outline: none;
+            font-weight: 500;
+            color: #26FF47;
+        }
+        
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            -webkit-text-fill-color: #D9D9D9;
+            -webkit-box-shadow: 0 0 0px 1000px #1F1A26 inset;
+        }
