@@ -20,14 +20,28 @@
     $cidade = $_POST["cidade"];
     $estado = $_POST["estado"];
 
-    include('conexao.php');
+
 
 
     //Verificar se o usuário informou dados vazios
-    if ($nome == "" || $email == "" || $senha == "" || $csenha == "" || $cep == "" || $cidade == "" || $estado == "") {
+
+    if (empty($nome)) {
+        header("Location: cadastro.html");
+    } else if (empty($email)) {
+        header("Location: cadastro.html");
+    } else if (empty($senha)) {
+        header("Location: cadastro.html");
+    } else if (empty($csenha)) {
+        header("Location: cadastro.html");
+    } else if (empty($cep)) {
+        header("Location: cadastro.html");
+    } else if (empty($cidade)) {
+        header("Location: cadastro.html");
+    } else if (empty($estado)) {
         header("Location: cadastro.html");
     } else {
 
+        include('conexao.php');
         //Verificar se o e-mail informado já foi cadastrado.
 
         $sql_validar = "SELECT * FROM usuarios WHERE email='$email'";
