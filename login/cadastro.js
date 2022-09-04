@@ -7,8 +7,9 @@ const cep = document.getElementById("cep");
 const cidade = document.getElementById("cidade");
 const estado = document.getElementById("estado");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("input", (e) => {
     checkInputs();
+    e.preventDefault();
 });
 
 function checkInputs() {
@@ -76,7 +77,6 @@ function checkInputs() {
 
     if (formIsValid) {
         console.log("O formulário está 100% válido!");
-        e.preventDefault();
     }
 }
 
