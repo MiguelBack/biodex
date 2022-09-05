@@ -6,6 +6,41 @@
     font-family: "Poppins", sans-serif;
 }
 
+
+.menu-h{
+    list-style-type: none;
+    padding: 0;
+    background-color: #292333;
+    
+}
+.menu-h li{
+    display: inline-block;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+   transition: background .4s;
+   
+}
+
+.menu-h li a{
+    text-align: center;
+   color: #D9D9D9;
+   padding: 20px;
+   display: inline-block;
+    text-decoration: none;
+   display: inline;
+   font-size: 12pt;
+
+  
+}
+.menu-h li:hover {
+   
+    background-color: #26FF47;
+   
+
+}
+
+
 .main-login {
     background: #1F1A26;
     width: 100vw;
@@ -25,8 +60,8 @@
 }
 
 .left-login>img {
-    max-width: 220px;
-    max-height: 220px;
+    max-width: 25%;
+    max-height: 25%;
     width: auto;
     height: auto;
 }

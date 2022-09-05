@@ -20,9 +20,8 @@
     $cidade = $_POST["cidade"];
     $estado = $_POST["estado"];
 
-
-
-
+    
+    
     //Verificar se o usuário informou dados vazios
 
     if (empty($nome)) {
@@ -54,6 +53,7 @@
         } else {
 
             $sql = "INSERT INTO usuarios VALUES (null, '$nome', '$email', '$cep', '$cidade', '$estado', '$senha')";
+            echo $sql;
 
             $result = $mysqli->query($sql);
 
@@ -66,8 +66,12 @@
                 echo $con->error;
                 echo "</p>";
             }
+       
+       
         }
+       
     }
+    
     ?>
 
 </body>
