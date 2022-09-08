@@ -1,108 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/biodex/back/cep/jquery-3.6.0.min.js">
-    </script>
-    <script src="/biodex/back/cep/autofill.js">
-    </script>
+    <script src="/biodex/back/cep/jquery-3.6.0.min.js"></script>
+    <script src="/biodex/back/cep/autofill.js"></script>
 
-    <link rel="shortcut icon" href="/biodex/back/biodex.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="/biodex/back/biodex.png"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="./cadastro.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
-        rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Crie uma Conta</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item">
+              <a href="entrar.html" class="nav-link">Início</a>
+            </li>
+            <li class="nav-item">
+              <a href="cadastro.html" class="nav-link">Cadastrar</a>
+            </li>
+            <li class="nav-item">
+              <a href="sobre.html" class="nav-link"> Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <div class="container">
-        <div class="header">
-            <h2 align="center">CRIAR CONTA</h2>
+      <div class="header">
+        <h2 align="center">CRIAR CONTA</h2>
+      </div>
+
+      <form id="form" class="form" method="POST" action="./cadastrar.php">
+        <div class="form-control">
+          <label for="username">Usuário</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Digite seu nome de usuário..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
         </div>
 
-        <form id="form" class="form" method="POST" action="./cadastrar.php">
-            <div class="form-control">
-                <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário..." />
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" placeholder="Digite seu email.." />
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." />
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="password-confirmation">Confirmação da senha</label>
-                <input type="password" id="password-confirmation" name="password-confirmation"
-                    placeholder="Digite sua senha novamente..." />
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="cep"> CEP </label>
-                <input type="text" name="cep" id="cep" placeholder="CEP">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="cep"> Cidade </label>
-                <input type="text" name="cidade" id="cidade" placeholder="Cidade">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="cep"> Estado </label>
-                <input type="text" name="estado" id="estado" placeholder="Estado">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <button type="submit">Enviar</button>
-        </form>
-
-
-
-        <div class="form-control" align="center">
-            <h6>Já possui conta? <br />
-                <a href="entrar.html"> Entrar </a>
-            </h6>
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Digite seu email.."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
         </div>
 
+        <div class="form-control">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password-confirmation">Confirmação da senha</label>
+          <input
+            type="password"
+            id="password-confirmation"
+            name="password-confirmation"
+            placeholder="Digite sua senha novamente..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="cep"> CEP </label>
+          <input type="text" name="cep" id="cep" placeholder="CEP" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="cep"> Cidade </label>
+          <input type="text" name="cidade" id="cidade" placeholder="Cidade" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="cep"> Estado </label>
+          <input type="text" name="estado" id="estado" placeholder="Estado" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="form-control" align="center">
+        <h6>
+          Já possui conta? <br />
+          <a href="entrar.html"> Entrar </a>
+        </h6>
+      </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f9e19193d6.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./cadastro.js"></script>
-</body>
 
+    <img src="/biodex/back/biodex.svg" alt="Biodex!" />
+  </body>
 </html>
