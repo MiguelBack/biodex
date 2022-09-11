@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,102 +9,80 @@
     <script src="/biodex/back/cep/jquery-3.6.0.min.js"></script>
     <script src="/biodex/back/cep/autofill.js"></script>
 
-    <link
-      rel="shortcut icon"
-      href="/biodex/back/biodex.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
 
     <link rel="stylesheet" href="./entrar.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>Biodex!</title>
-  </head>
+    <title>Entrar</title>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav class="nav-bar">
-        <div class="nav-list">
-          <ul>
-            <li class="nav-item">
-              <a href="entrar.html" class="nav-link"> Entrar</a>
-            </li>
-            <li class="nav-item">
-              <a href="cadastro.html" class="nav-link">Cadastrar</a>
-            </li>
-            <li class="nav-item">
-              <a href="sobre.html" class="nav-link"> Sobre</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="nav-bar">
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item">
+                        <a href="entrar.html" class="nav-main"> Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cadastro.html" class="nav-link">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link"> Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <div class="main-login">
-      <div class="left-login">
-        <img src="/biodex/back/biodex.svg" alt="Biodex!" />
-      </div>
-
-      <div class="right-login">
-        <div class="container">
-          <div class="header">
-            <h2>ENTRAR</h2>
-          </div>
-
-          <form id="form" class="form" method="POST" action="validar-login.php">
-            <div class="form-control">
-              <label for="email">E-mail</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Digite seu email.."
-              />
-              <i class="fas fa-exclamation-circle"></i>
-              <i class="fas fa-check-circle"></i>
-              <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-              <label for="senha">Senha</label>
-              <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite sua senha..."
-              />
-              <i class="fas fa-exclamation-circle"></i>
-              <i class="fas fa-check-circle"></i>
-              <small>Mensagem de erro</small>
-            </div>
-
-            <button type="submit">Enviar</button>
-          </form>
-          <div class="form-control" align="center">
-            <h6>
-              Não possui conta? <br />
-              <a href="cadastro.html"> Criar Conta </a>
-            </h6>
-          </div>
-
-          <div class="instagram" align="center">
-            <a href="https://www.instagram.com/miguell_back/" target="blank">
-              <i class="fa fa-instagram" style="font-size: 20px"></i>
-            </a>
-          </div>
+        <div class="left-login">
+            <img src="/biodex/back/biodex.svg" alt="Biodex!" />
         </div>
-      </div>
+
+        <div class="right-login">
+            <div class="container">
+                <div class="header">
+                    <h2>ENTRAR</h2>
+                </div>
+
+                <form id="form" class="form" method="POST" action="validar-login.php">
+                    <div class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" placeholder="Digite seu email.." />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="form-control" align="center">
+                    <h6>
+                        Não possui conta? <br />
+                        <a href="cadastro.html"> Criar Conta </a>
+                    </h6>
+                </div>
+
+                <div class="instagram" align="center">
+                    <a href="https://www.instagram.com/miguell_back/" target="blank">
+                        <i class="fa fa-instagram" style="font-size: 20px"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script
-      src="https://kit.fontawesome.com/f9e19193d6.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
     <script src="./entrar.js"></script>
-  </body>
+</body>
+
 </html>

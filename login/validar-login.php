@@ -1,6 +1,7 @@
 <?php
 include('conexao.php');
 
+
 if (isset($_POST['email']) || isset($_POST['senha'])) {
 
     $email = $mysqli->real_escape_string($_POST['email']);
@@ -21,6 +22,10 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['cep'] = $usuario['cep'];
+        $_SESSION['cidade'] = $usuario['cidade'];
+        $_SESSION['estado'] = $usuario['estado'];
 
         header("Location: /biodex/private/index.php");
     } else {

@@ -1,5 +1,11 @@
+<?php
+include("../../login/protect.php");
+include("../../login/validar-login.php");
+?>
+
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,25 +17,35 @@
 
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
 
-    <link rel="stylesheet" href="./cadastro.css" />
+    <link rel="stylesheet" href="/biodex/login/cadastro.css" />
 
-    <title>Crie uma Conta</title>
+    <title>Alterar Dados</title>
+
+
+
 </head>
 
 <body>
+
+    <?php
+
+    $idsessao = $_SESSION['id'];
+
+    $sql = "SELECT * FROM usuarios WHERE id = '$idsessao'";
+    $result = $mysqli->query($sql);
+    if ($result->num_rows > 0) {
+        $linha = $result->fetch_assoc();
+    ?>
+
     <header>
         <nav class="nav-bar">
             <div class="nav-list">
                 <ul>
+
                     <li class="nav-item">
-                        <a href="entrar.html" class="nav-link">Entrar</a>
+                        <a href="../usuario.php" class="nav-main">Voltar</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="cadastro.html" class="nav-main">Cadastrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="sobre.html" class="nav-link"> Sobre</a>
-                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -37,13 +53,16 @@
 
     <div class="container">
         <div class="header">
-            <h2 align="center">CRIAR CONTA</h2>
+            <h2 align="center">ALTERAR DADOS</h2>
         </div>
 
-        <form id="form" class="form" method="POST" action="./cadastrar.php">
+        <form id="form" class="form" method="POST" action="./alteracao.php">
+
+            <input type="text" id="id" name="id" value="<?= $linha['id'] ?>" hidden />
+
             <div class="form-control">
                 <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário..." />
+                <input type="text" id="username" name="username" value="<?= $linha['nome'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
@@ -51,15 +70,15 @@
 
             <div class="form-control">
                 <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" placeholder="Digite seu email.." />
-                <i class="fas fa-exclamation-circle"></i>
+                <input type="text" id="email" name="email" value="<?= $linha['email'] ?>" />
+                <i class=" fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
             </div>
 
             <div class="form-control">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." />
+                <input type="password" id="senha" name="senha" value="<?= $linha['senha'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
@@ -67,7 +86,8 @@
 
             <div class="form-control">
                 <label for="password-confirmation">Confirmação da senha</label>
-                <input type="password" id="password-confirmation" name="password-confirmation" placeholder="Digite sua senha novamente..." />
+                <input type="password" id="password-confirmation" name="password-confirmation"
+                    value="<?= $linha['senha'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
@@ -75,7 +95,7 @@
 
             <div class="form-control">
                 <label for="cep"> CEP </label>
-                <input type="text" name="cep" id="cep" placeholder="CEP" />
+                <input type="text" name="cep" id="cep" value="<?= $linha['cep'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
@@ -83,7 +103,7 @@
 
             <div class="form-control">
                 <label for="cep"> Cidade </label>
-                <input type="text" name="cidade" id="cidade" placeholder="Cidade" />
+                <input type="text" name="cidade" id="cidade" value="<?= $linha['cidade'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
@@ -91,27 +111,25 @@
 
             <div class="form-control">
                 <label for="cep"> Estado </label>
-                <input type="text" name="estado" id="estado" placeholder="Estado" />
+                <input type="text" name="estado" id="estado" value="<?= $linha['estado'] ?>" />
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Mensagem de erro</small>
             </div>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Alterar</button>
         </form>
 
-        <div class="form-control" align="center">
-            <h6>
-                Já possui conta? <br />
-                <a href="entrar.html"> Entrar </a>
-            </h6>
-        </div>
     </div>
 
     <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-    <script src="./cadastro.js"></script>
+    <script src="/biodex/login/cadastro.js"></script>
 
-    <img src="/biodex/back/biodex.svg" alt="Biodex!" />
+    <?php
+    } else {
+        echo "<p>Nenhum registro encontrado para atualizar</p>";
+    }
+    ?>
 </body>
 
 </html>

@@ -7,8 +7,9 @@ include('../login/protect.php');
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./usuario.css">
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
+
     <title>Biodex!</title>
 </head>
 
@@ -21,7 +22,7 @@ include('../login/protect.php');
             <div class="nav-list">
                 <ul>
                     <li class="nav-item">
-                        <a href="./index.php" class="nav-main">Início</a>
+                        <a href="./index.php" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
                         <a href="cadastro.html" class="nav-link">Serpentes</a>
@@ -36,7 +37,7 @@ include('../login/protect.php');
                         <a href="/biodex/login/logout.php" class="nav-link"> Sair </a>
                     </li>
                     <li class="nav-item">
-                        <a href="usuario.php" class="nav-link"> <?= $_SESSION["nome"]; ?> </a>
+                        <a href="sobre.html" class="nav-main"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
                 </ul>
             </div>
@@ -47,10 +48,30 @@ include('../login/protect.php');
     <div class="main-text">
 
 
-        <h1>Bem-vindo(a) </h1>
-        <h3> <?= $_SESSION["nome"]; ?>! </h3>
+        <div class="container">
+
+            <div class="header">
+                <h1 align="center"> DADOS da Conta</h1>
+            </div>
 
 
+            <div align="center">
+                <h2>Usuário</h2>
+                <h3> <?= $_SESSION["nome"]; ?> </h3>
+                <h2>E-mail</h2>
+                <h3> <?= $_SESSION['email']; ?> </h3>
+                <h2>CEP</h2>
+                <h3> <?= $_SESSION['cep']; ?> </h3>
+                <h2>Cidade</h2>
+                <h3> <?= $_SESSION['cidade']; ?> </h3>
+                <h2>Estado</h2>
+                <h3> <?= $_SESSION['estado']; ?> </h3>
+            </div>
+
+        </div>
+
+
+        <h5 align="center"> <a href="./alterar-dados/alterar.php"> Alterar Dados</a> </h5>
 
     </div>
 

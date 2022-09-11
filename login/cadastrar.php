@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucesso!</title>
-</head>
-
-<body>
-
-    <?php
+  <?php
 
     $nome = $_POST["username"];
     $email = $_POST["email"];
@@ -20,8 +8,6 @@
     $cidade = $_POST["cidade"];
     $estado = $_POST["estado"];
 
-    
-    
     //Verificar se o usuário informou dados vazios
 
     if (empty($nome)) {
@@ -49,7 +35,7 @@
         $quantidade = $validar->num_rows;
 
         if ($quantidade == 1) {
-            echo "Já existe este email";
+            header('Location: email-ja-existe.html');
         } else {
 
             $sql = "INSERT INTO usuarios VALUES (null, '$nome', '$email', '$cep', '$cidade', '$estado', '$senha')";
@@ -66,14 +52,7 @@
                 echo $con->error;
                 echo "</p>";
             }
-       
-       
         }
-       
     }
-    
+
     ?>
-
-</body>
-
-</html>
