@@ -1,5 +1,5 @@
 <?php
-include('../login/protect.php');
+include('../../../login/html-php/protect.php');
 ?>
 
 <!DOCTYPE html>
@@ -7,48 +7,45 @@ include('../login/protect.php');
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../../home/css/index.css">
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
-    <title>Biodex!</title>
+    <title>Escorpiões</title>
 </head>
 
 <body>
-
-
 
     <header>
         <nav class="nav-bar">
             <div class="nav-list">
                 <ul>
                     <li class="nav-item">
-                        <a href="./index.php" class="nav-main">Início</a>
+                        <a href="../../home/php/index.php" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Serpentes</a>
+                        <a href="../../animais/serpentes/serpentes.php" class="nav-link">Serpentes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Escorpiões</a>
+                        <a href="../../animais/escorpioes/escorpioes.php" class="nav-main">Escorpiões</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Aranhas</a>
+                        <a href="../../animais/aranhas/aranhas.php" class="nav-link">Aranhas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/biodex/login/logout.php" class="nav-link"> Sair </a>
+                        <a href="/biodex/login/html-php/logout.php" class="nav-link"> Sair </a>
                     </li>
                     <li class="nav-item">
-                        <a href="usuario.php" class="nav-link"> <?= $_SESSION["nome"]; ?> </a>
+                        <a href="../../home/php/usuario.php" class="nav-link"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-
     <div class="main-text">
 
 
-        <h1>Bem-vindo(a) </h1>
-        <h3> <?= $_SESSION["nome"]; ?>! </h3>
+        <h1> Escorpiões </h1>
+        <h3> Página em desenvolvimento! </h3>
 
 
 

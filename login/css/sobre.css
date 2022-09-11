@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    scroll-behavior: smooth;
+    margin-bottom: 220px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+    background: #1f1a26;
+}
+
+.main-text {
+    display: flex;
+    width: auto;
+    margin-top: 50px;
+}
+
+.left-text {
+    margin-left: 100px;
+    margin-right: 50px;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+.left-text h1 {
+    font-size: 18pt;
+    text-align: justify;
+    color: #d9d9d9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.left-text h3 {
+    font-size: 14pt;
+    color: #d9d9d9;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.left-text h6 {
+    font-size: 9pt;
+    color: #d9d9d9;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: 0.2s;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.left-text h6:hover {
+    letter-spacing: 3px;
+}
+
+.right-text {
+    margin-right: 100px;
+    margin-left: 50px;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-text h1 {
+    font-size: 18pt;
+    text-align: justify;
+    color: #d9d9d9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.right-text h3 {
+    font-size: 14pt;
+    color: #d9d9d9;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.bold-color {
+    color: #26ff47;
+    font-weight: 500;
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+
+/* Menu */
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    padding: 15px 60px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 30px;
+}
+
+.nav-main {
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #d9d9d9;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-main:hover {
+    letter-spacing: 3px;
+}
+
+.nav-link {
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #d9d9d9;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    letter-spacing: 3px;
+}

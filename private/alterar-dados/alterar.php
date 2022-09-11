@@ -1,8 +1,7 @@
 <?php
-include("../../login/protect.php");
-include("../../login/validar-login.php");
+include("../../login/html-php/protect.php");
+include("../../login/html-php/conexao.php");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +16,9 @@ include("../../login/validar-login.php");
 
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
 
-    <link rel="stylesheet" href="/biodex/login/cadastro.css" />
+    <link rel="stylesheet" href="../../login/css/cadastro.css" />
 
     <title>Alterar Dados</title>
-
-
 
 </head>
 
@@ -43,7 +40,7 @@ include("../../login/validar-login.php");
                 <ul>
 
                     <li class="nav-item">
-                        <a href="../usuario.php" class="nav-main">Voltar</a>
+                        <a href="../home/php/usuario.php" class="nav-main">Voltar</a>
                     </li>
 
                 </ul>

@@ -1,5 +1,5 @@
 <?php
-include("../../login/conexao.php");
+include("../../login/html-php/conexao.php");
 
 $nome = $_POST["username"];
 $email = $_POST["email"];
@@ -9,7 +9,6 @@ $cep = $_POST["cep"];
 $cidade = $_POST["cidade"];
 $estado = $_POST["estado"];
 $idsessao = $_POST["id"];
-
 
 //Verificar se o usuário informou os mesmos dados já cadastrados.
 

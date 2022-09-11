@@ -1,5 +1,5 @@
 <?php
-include('../login/protect.php');
+include('../../../login/html-php/protect.php');
 ?>
 
 <!DOCTYPE html>
@@ -7,15 +7,13 @@ include('../login/protect.php');
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./usuario.css">
+    <link rel="stylesheet" href="../css/usuario.css">
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
 
-    <title>Biodex!</title>
+    <title>Perfil</title>
 </head>
 
 <body>
-
-
 
     <header>
         <nav class="nav-bar">
@@ -25,19 +23,19 @@ include('../login/protect.php');
                         <a href="./index.php" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Serpentes</a>
+                        <a href="../../animais/serpentes/serpentes.php" class="nav-link">Serpentes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Escorpiões</a>
+                        <a href="../../animais/escorpioes/escorpioes.php" class="nav-link">Escorpiões</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.html" class="nav-link">Aranhas</a>
+                        <a href="../../animais/aranhas/aranhas.php" class="nav-link">Aranhas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/biodex/login/logout.php" class="nav-link"> Sair </a>
+                        <a href="/biodex/login/html-php/logout.php" class="nav-link"> Sair </a>
                     </li>
                     <li class="nav-item">
-                        <a href="sobre.html" class="nav-main"> <?= $_SESSION["nome"]; ?> </a>
+                        <a href="./usuario.php" class="nav-main"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +49,7 @@ include('../login/protect.php');
         <div class="container">
 
             <div class="header">
-                <h1 align="center"> DADOS da Conta</h1>
+                <h1 align="center"> Dados da Conta</h1>
             </div>
 
 
@@ -71,7 +69,7 @@ include('../login/protect.php');
         </div>
 
 
-        <h5 align="center"> <a href="./alterar-dados/alterar.php"> Alterar Dados</a> </h5>
+        <h5 align="center"> <a href="../../alterar-dados/alterar.php"> Alterar Dados</a> </h5>
 
     </div>
 

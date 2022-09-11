@@ -27,7 +27,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $_SESSION['cidade'] = $usuario['cidade'];
         $_SESSION['estado'] = $usuario['estado'];
 
-        header("Location: /biodex/private/index.php");
+        header("Location: ../../private/home/php/index.php");
     } else {
         header("Location: entrar.html");
     }
