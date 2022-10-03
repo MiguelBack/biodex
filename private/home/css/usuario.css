@@ -129,6 +129,19 @@ h5 {
 h5 a {
     text-decoration: none;
     outline: none;
-    font-weight: 500;
+    font-weight: 400;
     color: #26ff47;
+    transition: 0.3s;
 }
+
+h5 a:hover {
+  
+    letter-spacing: 2px;
+}
+
+ img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 50px;
+}
+

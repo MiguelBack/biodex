@@ -50,7 +50,7 @@ body {
 }
 
 .form-control label {
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
     color: #d9d9d9;
 }
@@ -68,7 +68,7 @@ body {
 
 .form-control i {
     position: absolute;
-    top: 45px;
+    top: 35px;
     right: 10px;
     visibility: hidden;
 }

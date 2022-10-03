@@ -46,6 +46,9 @@ include('../../../login/html-php/protect.php');
     <div class="main-text">
 
 
+        <a href="imagem-usuario.php"><img src="/biodex/back/imagem-usuario.png" alt="Imagem do Usuário"></a>
+
+
         <div class="container">
 
             <div class="header">
