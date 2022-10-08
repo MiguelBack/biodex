@@ -26,6 +26,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $_SESSION['cep'] = $usuario['cep'];
         $_SESSION['cidade'] = $usuario['cidade'];
         $_SESSION['estado'] = $usuario['estado'];
+        $_SESSION['imagem'] = $usuario['imagem'];
 
         header("Location: ../../private/home/php/index.php");
     } else {

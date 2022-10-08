@@ -38,7 +38,7 @@
             header('Location: email-ja-existe.html');
         } else {
 
-            $sql = "INSERT INTO usuarios VALUES (null, '$nome', '$email', '$cep', '$cidade', '$estado', '$senha')";
+            $sql = "INSERT INTO usuarios VALUES (null, '$nome', '$email', '$cep', '$cidade', '$estado', '$senha', null)";
             echo $sql;
 
             $result = $mysqli->query($sql);

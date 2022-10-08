@@ -135,13 +135,17 @@ h5 a {
 }
 
 h5 a:hover {
-  
     letter-spacing: 2px;
 }
 
- img{
-    height: 200px;
-    width: 200px;
-    margin-bottom: 50px;
+img {
+    margin: 10px;
+    border-radius: 100px;
 }
 
+.cropped1 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: none;
+}

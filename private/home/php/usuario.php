@@ -1,5 +1,7 @@
 <?php
 include('../../../login/html-php/protect.php');
+include('../../../login/html-php/conexao.php');
+$idsessao = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,12 @@ include('../../../login/html-php/protect.php');
     <div class="main-text">
 
 
-        <a href="imagem-usuario.php"><img src="/biodex/back/imagem-usuario.png" alt="Imagem do Usuário"></a>
+
+        <a href="./imagem-usuario.php">
+            <img src="../../../back/img/<?= $_SESSION['imagem']; ?>" class="cropped1">
+        </a>
+
+
 
 
         <div class="container">
