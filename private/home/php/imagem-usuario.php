@@ -4,7 +4,6 @@ include('../../../login/html-php/conexao.php');
 
 $msg = false;
 $idsessao = $_SESSION['id'];
-$_SESSION['imagem'] = "imagem-usuario.svg";
 
 if (isset($_FILES['arquivo'])) {
     $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
@@ -15,10 +14,22 @@ if (isset($_FILES['arquivo'])) {
 
     $sqlCode = "UPDATE usuarios SET imagem='$novoNome' WHERE id='$idsessao'";
     if ($mysqli->query($sqlCode)) {
-        $msg = "Arquivo enviado com sucesso";
+
+        header('Location: usuario.php');
+
         $_SESSION['imagem'] =  $novoNome;
     } else {
         $msg = "Arquivo não enviado";
+    }
+}
+
+if (isset($_POST["remover"])) {
+
+    $sqlCode = "UPDATE usuarios SET imagem='imagem-usuario.svg' WHERE id='$idsessao'";
+    if ($mysqli->query($sqlCode)) {
+
+        header('Location: usuario.php');
+        $_SESSION['imagem'] =  'imagem-usuario.svg';
     }
 }
 
@@ -53,9 +64,6 @@ if (isset($_FILES['arquivo'])) {
 
     <div class="main-text">
 
-
-
-
         <form action="imagem-usuario.php" method="POST" enctype="multipart/form-data">
 
             <input type="text" id="id" name="id" value="<?= $linha['id'] ?>" hidden />
@@ -65,83 +73,104 @@ if (isset($_FILES['arquivo'])) {
 
             <img class="cropped1" src="../../../back/img/<?= $_SESSION['imagem']; ?>" id="imgResult">
 
-            <input type="submit" value="Salvar">
+            <input type="submit" value="Salvar" class="salvar">
 
+
+        </form>
+
+        <form action="imagem-usuario.php" method="POST">
+            <input type="submit" value="Remover Imagem" name="remover" class="remover">
         </form>
 
         <?php
         if ($msg != false) echo "<p> $msg </p>";
+
         ?>
 
     </div>
 
     <script>
-    var imagem = document.querySelector('[id=file]')
+        var imagem = document.querySelector('[id=file]')
 
-    imagem.addEventListener('change', e => {
+        imagem.addEventListener('change', e => {
 
-        var file = e.target.files[0]
-        var fileReader = new FileReader()
+            var file = e.target.files[0]
+            var fileReader = new FileReader()
 
-        fileReader.onloadend = () => {
-            document.querySelector('#imgResult').setAttribute('src', fileReader.result)
-        }
+            fileReader.onloadend = () => {
+                document.querySelector('#imgResult').setAttribute('src', fileReader.result)
+            }
 
-        fileReader.readAsDataURL(file)
-    })
+            fileReader.readAsDataURL(file)
+        })
     </script>
 
     <style>
-    input[type="file"] {
-        display: none;
-    }
+        input[type="file"] {
+            display: none;
+        }
 
-    label,
-    input[type=submit] {
-        margin: 20px;
-        text-align: center;
-        background-color: #26ff47;
-        border: none;
-        text-transform: uppercase;
-        color: #292333;
-        font-size: 14px;
-        width: 335px;
-        border-radius: 10px;
-        padding: 10px;
-        cursor: pointer;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        letter-spacing: 3px;
-        transition: 0.3s;
-    }
+        label,
+        .salvar {
+            margin: 20px;
+            text-align: center;
+            background-color: #26ff47;
+            border: none;
+            text-transform: uppercase;
+            color: #292333;
+            font-size: 14px;
+            width: 335px;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 3px;
+            transition: 0.3s;
+        }
 
-    label:hover,
-    input[type=submit]:hover {
-        letter-spacing: 5px;
-    }
 
-    .cropped1 {
-        margin: 10px;
-        width: 335px;
-        height: 300px;
-        object-fit: cover;
-        border: none;
+        .remover {
 
-    }
+            color: #f50551;
+            background: transparent;
+            outline: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12pt;
+        
 
-    img {
+        }
 
-        border-radius: 10px;
 
-    }
+        label:hover,
+        .salvar:hover {
+            letter-spacing: 5px;
+        }
 
-    img1 {
-        width: 300px;
-        height: 300px;
-        border-radius: 10px;
+        .cropped1 {
+            margin: 10px;
+            width: 335px;
+            height: 300px;
+            object-fit: cover;
+            border: none;
 
-    }
+        }
+
+        img {
+
+            border-radius: 10px;
+
+        }
+
+        img1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+
+        }
     </style>
 
 

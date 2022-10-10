@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Set-2022 às 13:58
+-- Tempo de geração: 10-Out-2022 às 14:53
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -34,7 +34,8 @@ CREATE TABLE `usuarios` (
   `cep` varchar(20) NOT NULL,
   `cidade` varchar(100) NOT NULL,
   `estado` varchar(2) NOT NULL,
-  `senha` varchar(200) NOT NULL
+  `senha` varchar(200) NOT NULL,
+  `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -55,7 +56,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
