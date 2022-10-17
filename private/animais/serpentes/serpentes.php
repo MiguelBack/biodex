@@ -38,6 +38,11 @@ include('../../../login/html-php/protect.php');
                     <li class="nav-item">
                         <a href="../../home/php/usuario.php" class="nav-link"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
+
+                    <a href="../../home/php/usuario.php">
+                        <img src="../../../back/img/<?= $_SESSION['imagem']; ?>" class="cropped1">
+                    </a>
+
                 </ul>
             </div>
         </nav>
@@ -53,6 +58,17 @@ include('../../../login/html-php/protect.php');
 
 
     </div>
+
+    <style>
+        .cropped1 {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            border: none;
+            border-radius: 100px;
+        }
+    </style>
+
 
 </body>
 

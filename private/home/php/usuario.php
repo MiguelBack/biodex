@@ -39,6 +39,7 @@ $idsessao = $_SESSION['id'];
                     <li class="nav-item">
                         <a href="./usuario.php" class="nav-main"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
+              
                 </ul>
             </div>
         </nav>
@@ -82,6 +83,7 @@ $idsessao = $_SESSION['id'];
         <h5 align="center"> <a href="../../alterar-dados/alterar.php"> Alterar Dados</a> </h5>
 
     </div>
+
 
 </body>
 
