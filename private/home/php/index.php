@@ -3,8 +3,11 @@ include('../../../login/html-php/protect.php');
 include('../../../login/html-php/conexao.php');
 $usuario = $_SESSION['nome'];
 
+date_default_timezone_set('America/Sao_Paulo');
+$consulta = "SELECT * FROM publicacoes ORDER BY id desc";
+$publicacoes = $mysqli->query($consulta) or die($mysqli->error);
 
-$publicacoes = $mysqli->query("SELECT * FROM publicacoes ORDER BY id desc");
+$hora = date('H:i:s');
 
 if (isset($_POST['publicar'])) {
     if ($_FILES["file"]["error"] > 0) {
@@ -120,23 +123,28 @@ if (isset($_POST['publicar'])) {
 
         <?php
 
-        while ($publicacao = mysqli_fetch_assoc($publicacoes)) {
+        while ($publicacao = $publicacoes->fetch_array()) {
             $usuario = $publicacao['usuario'];
             $id = $publicacao['id'];
+
+            $consulta1 = "SELECT * FROM usuarios WHERE nome='$usuario'";
+            $pub = $mysqli->query($consulta1) or die($mysqli->error);
+
+            $pub_usuario = $pub->fetch_array();
 
 
             if ($publicacao['imagem'] == "") {
                 echo   '<div class="publicacao" id="' . $id . '">
                
-                <p>  <img src="../../../back/img/' . $_SESSION["imagem"] . '" class="usuario-img"> 
-               
+                <p>  <img src="../../../back/img/' . $pub_usuario["imagem"] . '" class="usuario-img"> 
+
                <a href="#"> ' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</p>
                 <span class="texto-pub">' . $publicacao['texto'] . '</span> 
             </div>';
             } else {
                 echo   '<div class="publicacao" id="' . $id . '">
                
-                <p>  <img src="../../../back/img/' . $_SESSION["imagem"] . '" class="usuario-img">
+                <p>  <img src="../../../back/img/' . $pub_usuario["imagem"] . '" class="usuario-img">
 
                   <a href="#"> ' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</span> </p>
             <span class="texto-pub">' . $publicacao['texto'] . '</span> 
