@@ -1,52 +1,20 @@
 <?php
 include('../../../login/html-php/protect.php');
 include('../../../login/html-php/conexao.php');
-$usuario = $_SESSION['nome'];
 
 
-$publicacoes = $mysqli->query("SELECT * FROM publicacoes ORDER BY id desc");
-
-if (isset($_POST['publicar'])) {
-    if ($_FILES["file"]["error"] > 0) {
-        $texto = $_POST['texto'];
-        $hoje = date("d-m-Y");
+$id = $_GET['id'];
 
 
-        if ($texto == "") {
-            echo "<h3 Você precisa escrever algo antes de publicar!";
-        } else {
-            $query = "INSERT INTO publicacoes (usuario,texto,datahoje) VALUES ('$usuario', '$texto', '$hoje')";
-            $data = $mysqli->query($query) or die("Falha na execução do código SQL: " . $mysqli->error);
+$saberr = $mysqli->query("SELECT * FROM usuarios WHERE id='$id'");
+$saber = mysqli_fetch_assoc($saberr);
+$email = $saber["email"];
 
-            if ($data) {
-                header("Location:  ./index.php");
-            } else {
-                echo "Falha na execução do código SQL: " . $mysqli->error;
-            }
-        }
-    } else {
-        $n = rand(0, 1000000);
-        $img = $n . $_FILES["file"]["name"]; //name
-
-        move_uploaded_file($_FILES["file"]["tmp_name"], "../../../back/img/upload/" . $img);
-
-        $texto = $_POST['texto'];
-        $hoje = date("d-m-Y");
-
-        if ($texto == "") {
-            echo "<h3 Você precisa escrever algo antes de publicar!";
-        } else {
-            $query = "INSERT INTO publicacoes (usuario,texto,imagem,datahoje) VALUES ('$usuario', '$texto', '$img', '$hoje')";
-            $data = $mysqli->query($query) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-            if ($data) {
-                header("Location:  ./index.php");
-            } else {
-                echo "Falha na execução do código SQL: " . $mysqli->error;
-            }
-        }
-    }
+if ($email == $_SESSION['email']) {
+    header('Location: ./usuario.php');
 }
+
+$publicacoes = $mysqli->query("SELECT * FROM publicacoes WHERE email='$email' ORDER BY id desc");
 
 ?>
 
@@ -61,7 +29,7 @@ if (isset($_POST['publicar'])) {
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
     <link href="/website/css/uicons-bold-rounded.css" rel="stylesheet">
 
-    <title>Serpentes</title>
+    <title>Perfil</title>
 </head>
 
 <header>
@@ -97,6 +65,8 @@ if (isset($_POST['publicar'])) {
 </header>
 
 
+
+
 <div class="main-text">
 
     <div class="publicar">
@@ -124,13 +94,12 @@ if (isset($_POST['publicar'])) {
             $usuario = $publicacao['usuario'];
             $id = $publicacao['id'];
 
-
             if ($publicacao['imagem'] == "") {
                 echo   '<div class="publicacao" id="' . $id . '">
                
                 <p>  <img src="../../../back/img/' . $_SESSION["imagem"] . '" class="usuario-img"> 
                
-               <a href="#"> ' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</p>
+                <a href="perfil.php?id=' . $_SESSION['id'] . '">' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</p>
                 <span class="texto-pub">' . $publicacao['texto'] . '</span> 
             </div>';
             } else {
@@ -138,7 +107,7 @@ if (isset($_POST['publicar'])) {
                
                 <p>  <img src="../../../back/img/' . $_SESSION["imagem"] . '" class="usuario-img">
 
-                  <a href="#"> ' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</span> </p>
+                  <a href="perfil.php?id=' . $_SESSION['id'] . '"> ' . $usuario . '</a>' . '<span class="data">' . $publicacao["datahoje"] . '</span> </p>
             <span class="texto-pub">' . $publicacao['texto'] . '</span> 
             <img src="../../../back/img/upload/' . $publicacao["imagem"] . '" class="pub-img"/>
         </div>';

@@ -2,6 +2,7 @@
 include('../../../login/html-php/protect.php');
 include('../../../login/html-php/conexao.php');
 $idsessao = $_SESSION['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -39,23 +40,16 @@ $idsessao = $_SESSION['id'];
                     <li class="nav-item">
                         <a href="./usuario.php" class="nav-main"> <?= $_SESSION["nome"]; ?> </a>
                     </li>
-              
+
                 </ul>
             </div>
         </nav>
     </header>
 
-
     <div class="main-text">
-
-
-
         <a href="./imagem-usuario.php">
             <img src="../../../back/img/<?= $_SESSION['imagem']; ?>" class="cropped1">
         </a>
-
-
-
 
         <div class="container">
 

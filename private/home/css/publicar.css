@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+body {
+    background: #1f1a26;
+}
+
+.main-text {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Menu */
+
+header {
+    background-color: #1f1a26;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    padding: 15px 60px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 30px;
+}
+
+.nav-main {
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #d9d9d9;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-main:hover {
+    letter-spacing: 3px;
+}
+
+.nav-link {
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #d9d9d9;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    letter-spacing: 3px;
+}
+
+.cropped1 {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border: none;
+    border-radius: 100px;
+}
+
+
+/* Publicações */
+
+.publicar {
+    margin-top: 30px;
+}
+
+.publicar textarea {
+    outline: none;
+    resize: none;
+    border: none;
+    width: 400px;
+    height: 170px;
+    padding: 30px;
+    display: flex;
+    margin: auto;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: #292333;
+    color: #d9d9d9;
+    font-size: 10pt;
+}
+
+.publicar textarea::placeholder {
+    color: #d9d9d9;
+}
+
+.publicar .inserir {
+    margin-top: 10px;
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.publicar .inserir:hover {
+    transform: rotate(90deg);
+}
+
+.publicar input[type="submit"] {
+    margin-top: 10px;
+    float: right;
+    height: 30px;
+    width: 150px;
+    background-color: #26ff47;
+    border: none;
+    text-transform: uppercase;
+    color: #292333;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+.publicar input[type="submit"]:hover {
+    letter-spacing: 5px;
+}
+
+.publicacao {
+    width: 400px;
+    min-height: 70px;
+    max-height: 1000px;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #292333;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.publicacao p {
+    color: #d9d9d9;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10pt;
+    text-align: center;
+}
+
+.data {
+    font-size: 8pt;
+    display: block;
+}
+
+.publicacao a {
+    color: #d9d9d9;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.publicacao a:hover {
+    color: #26ff47;
+}
+
+.texto-pub {
+    display: block;
+    margin: auto;
+    width: 380px;
+    color: #d9d9d9;
+    margin-top: 20px;
+}
+
+.publicacao .pub-img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.publicacao .usuario-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: none;
+    border-radius: 100px;
+}
+
+h3 {
+    color: #d9d9d9;
+    font-size: 8pt;
+    font-weight: 400;
+    display: inline-flex;
+}
