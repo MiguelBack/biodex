@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Out-2022 às 14:53
+-- Tempo de geração: 24-Out-2022 às 14:12
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -35,8 +35,15 @@ CREATE TABLE `usuarios` (
   `cidade` varchar(100) NOT NULL,
   `estado` varchar(2) NOT NULL,
   `senha` varchar(200) NOT NULL,
-  `imagem` varchar(40) DEFAULT NULL
+  `imagem` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `cep`, `cidade`, `estado`, `senha`, `imagem`) VALUES
+(1, 'Miguel Back', 'miguelbackifpr@gmail.com', '87703-624', 'Paranavaí', 'PR', '1234567', 'af428d042d35eaa1ff838a989632be7f.png');
 
 --
 -- Índices para tabelas despejadas
