@@ -64,7 +64,7 @@ if (isset($_POST['publicar'])) {
     <link rel="shortcut icon" href="/biodex/back/icon.svg" type="image/x-icon" />
     <link href="/website/css/uicons-bold-rounded.css" rel="stylesheet">
 
-    <title>Serpentes</title>
+    <title> Página Inicial</title>
 </head>
 
 <header>
