@@ -6,6 +6,11 @@
     font-family: 'Urbanist', sans-serif;
 }
 
+*::selection {
+    background-color: #26ff47;
+    color: #1f1a26;
+}
+
 body {
     background: #1f1a26;
 }
@@ -186,6 +191,7 @@ header {
     width: 380px;
     color: #d9d9d9;
     margin-top: 20px;
+    line-height: 30px;
 }
 
 .publicacao .pub-img {

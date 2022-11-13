@@ -10,6 +10,11 @@ body {
     background: #1f1a26;
 }
 
+*::selection {
+    background-color: #26ff47;
+    color: #1f1a26;
+}
+
 .main-login {
     display: flex;
     justify-content: center;
